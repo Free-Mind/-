@@ -1,0 +1,105 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+a{
+	color: black;
+	text-decoration: none;
+}
+.container{
+	width: 100%;
+	padding:0;
+	min-width: 320px;
+	margin: 0;
+}
+.navigation{
+	background-color: #ff4683;
+	height: 44px;
+	width: 100%;
+	padding-top: 12px;
+}
+.back{
+	width: 15%;
+	float: left;
+	padding-left: 10px;
+}
+.backIcon{
+	color: white; 
+}
+.list{
+	width: 15%;
+	float: left;
+	padding-top:5px;
+	padding-right: 10px;
+}
+.listIcon{
+	color: white; 
+	float: right;
+}
+.title{
+	width: 70%;
+	font-size: 18px;
+	color: white;
+	text-align: center;
+	float: left;
+
+}
+.list-title-wrap{
+	border-bottom: 1px solid #DDD8CE;
+	margin: 0;
+}
+.order-item{
+	overflow: hidden;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-bottom: 1px solid #DDD8CE;
+}
+.img-wrap,.info-wrap{
+	float: left;
+}
+
+.info-wrap{
+	padding-left: 20px;
+}
+.food-doing-wrap,.room-doing-wrap{
+	display: none;
+}
+img{
+	width: 120px;
+	height: 88px;
+
+}
+.list-title-wrap{
+	font-size: 25px;
+	text-align: center;
+}
+.done-icon{
+	color: green;
+}
+.doing-icon{
+	color: yellow;
+}
+.wrapper{
+	overflow: hidden;
+}
+.waring-wrap{
+	color: red;
+	font-weight: bold;
+	font-size: 10px;
+	float: left;
+}
+.modify-wrap{
+	float: right;
+}
+.evaluation-wrap{
+	display: none;
+}
+.hotel-name{
+	font-size: 18px;
+	font-weight: bold;
+}
+.warning{
+	color: red;
+	font-size: 14px;
+	display: none;
+}

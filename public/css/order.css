@@ -1,0 +1,129 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+p{
+	margin: 0;
+}
+.container{
+	width: 100%;
+	padding:0;
+	min-width: 320px;
+	margin: 0;
+}
+.navigation{
+	background-color: #ff4683;
+	height: 44px;
+	width: 100%;
+	padding-top: 12px;
+}
+.back{
+	width: 20%;
+	float: left;
+	padding-left: 10px;
+}
+.backIcon{
+	color: white; 
+}
+.abort-wrap{
+	width: 20%;
+	float: left;
+	padding-top:3px;
+	padding-right: 5px;
+}
+.abort{
+	color: white;
+	float: right;
+}
+
+.title{
+	width: 60%;
+	font-size: 18px;
+	color: white;
+	text-align: center;
+	float: left;
+}
+.room-img{
+	width: 100%;
+}
+.img-wrap{
+	width: 100%;
+	height: 150px;
+	min-width: 320px;
+	overflow: hidden;
+}
+.food-wrap{
+	overflow: hidden;
+}
+
+.food-title,.room-name{
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid #DDD8CE;
+	margin-bottom: 10px;
+}
+.desc-content,.cat-content{
+	padding-left: 10px;
+}
+.cat,.desc{
+	font-size: 16px;
+	font-weight: bold;
+}
+.intro-wrap{
+	padding-left: 20px;
+}
+.change-btn{
+	width: 100%;
+	background-color: #ff4978;
+	color: white;
+}
+.food-title{
+	margin-top: 10px;
+}
+.food-img-wrap{
+	float: left;
+	width: 37.5%;
+}
+.food-img{
+	width: 120px;
+	height: 72px;
+}
+.food-info-wrap{
+	float: left;
+	width: 62.5%;
+}
+.food-name-wrap{
+	font-size: 16px;
+	font-weight: bold;
+}
+.food-intro-wrap{
+	font-size: 13px;
+	color: #88888d;
+}
+.sale-wrap{
+	font-size: 13px;
+}
+.add-price{
+	overflow: hidden;
+}
+.price-wrap{
+	float: left;
+	font-size: 20px;
+	color: #ff4978;
+	font-weight: bold;
+}
+.add-wrap{
+	float: right;
+	padding-right: 40px;
+	padding-top: 2px;
+	color: #ff4978;
+}
+.saveorabort-group{
+	padding-top: 20px;
+}
+.save-btn{
+	width: 100%;
+	color: white;
+	background-color: #2894FF;
+}

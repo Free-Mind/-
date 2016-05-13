@@ -1,0 +1,214 @@
+.container{
+	width: 100%;
+	padding:0;
+	min-width: 320px;
+}
+.book-food-btn{
+	background: #ff4978;
+	color:white;
+}
+.navigation{
+	background-color: #ff4683;
+	height: 44px;
+	width: 100%;
+	padding-top: 12px;
+}
+.back{
+	width: 15%;
+	float: left;
+	padding-left: 10px;
+}
+.backIcon{
+	color: white; 
+}
+.dropdown{
+	width: 15%;
+	float: left;
+	padding-top:5px;
+	padding-right: 10px;
+}
+.dropdown-menu{
+	background-color: #ff4683;
+	color: white;
+}
+.listIcon{
+	color: white; 
+	float: right;
+}
+.title{
+	width: 70%;
+	font-size: 18px;
+	color: white;
+	text-align: center;
+	float: left;
+}
+.detail-image{
+	position: relative;
+	z-index: 1;
+}
+.picture{
+	width: 100%;
+	min-width: 320px;
+	height: 150px;
+	overflow: hidden;
+}
+.pic-item{
+	width: 100%;
+}
+.tip{
+	position: absolute;
+	color: white;
+	font-weight: bold;
+	top: 120px;
+	left: 0px;
+	width: 100%;
+	background: rgba(0,0,0,.5);
+	text-align: center;
+	z-index: 1;
+	font-size: 15px;
+	height: 30px;
+	opacity: 0.8;
+}
+.intro{
+	padding-left: 5px;
+	border-bottom: 1px solid #DDD8CE;
+}
+.name{
+	font-size: 21px;
+	font-weight: bold;
+}
+.info{
+	color: #88888d;
+	font-size: 13px;
+}
+.classfication{
+	padding-top: 10px;
+	overflow: hidden;
+}
+.food,.room,.evaluation{
+	float: left;
+	width: 33.3%;
+	text-align: center;
+	color: #111;
+	font-size: 17px;
+}
+.nav-line{
+	border-bottom: 2px solid #ff4683;
+	display: block;
+	transition: all .5s;
+}
+.fixednav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+}
+.food-item-wrap,.room-item-wrap{
+	overflow: hidden;
+	border-bottom: 1px solid #DDD8CE;
+	margin-bottom: 5px;
+}
+.room-detail,.envaluation-detail{
+	display: none;
+}
+.img-wrap{
+	float: left;
+	width: 37.5%;
+	padding-top: 27.5px;
+}
+.food-img,.room-img{
+	width: 120px;
+	height: 72px;
+}
+.info-wrap{
+	float: left;
+	width: 62.5%;
+}
+.name-wrap,.room-name{
+	font-size: 16px;
+	font-weight: bold;
+}
+.intro-wrap{
+	font-size: 13px;
+	color: #88888d;
+}
+.sale-wrap{
+	font-size: 13px;
+}
+.add-price{
+	overflow: hidden;
+}
+.price-wrap{
+	float: left;
+	font-size: 20px;
+	color: #ff4978;
+	font-weight: bold;
+}
+.add-wrap{
+	float: right;
+	padding-right: 40px;
+	padding-top: 2px;
+	color: #ff4978;
+}
+.more{
+	width: 100%;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	color: #ff4978;
+}
+.book-btn{
+	background-color: #ff4978;
+	color: white;
+}
+.shopping-cart{
+	overflow: hidden;
+	position: absolute;
+	width: 100%;	
+	bottom: 0px;
+	background: black;
+	opacity: 0.7;
+}
+.food-num-wrap{
+	float: left;
+	width: 25%;
+	text-align: center;
+	color: white;
+}
+.total-price-wrap{
+	float: left;
+	width: 25%;
+	text-align: center;
+	color: white;
+}
+.picktime-wrap{
+	float: left;
+	width:25%;
+}
+.button-wrap{
+	float: left;
+	width: 25%;
+	padding-right: 0px;
+}
+.book-food-btn{
+	width:40px;
+	height:40px; 
+	background: #ff4978;
+	color:white;
+	font-weight: bold;
+}
+.food-num-wrap ,.total-price-wrap{
+	padding-top: 18px;
+}
+.modal-backdrop{
+	opacity: 0.5 !important;
+	z-index: 5;
+}
+#myModal{
+	z-index: 10;
+}
+.dwbg{
+	z-index: 100;
+}
