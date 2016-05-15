@@ -58,6 +58,7 @@
 							<p class="desc"><?php echo $recommend_item['h_desc']?></p>
 							<div class="address-line">
 								<p class="address"><?php echo $recommend_item['h_address']?></p>
+
 <?php
 		if(isset($recommend_item['distance'])){
 ?>
