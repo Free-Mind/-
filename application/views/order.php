@@ -95,9 +95,6 @@
 						<div class="price-wrap">
 							<p class="food-price"><?php echo "￥".$food_item['f_price']?></p> 
 						</div>
-						<div class="minus-wrap">
-							<i class="fa fa-minus-circle fa-2x"></i>
-						</div>
 					</div>
 				</div>
 			</div>

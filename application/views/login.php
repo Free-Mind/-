@@ -18,6 +18,8 @@
 	        <label for="inputPassword" class="sr-only">密码</label>
 	        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="密码" required>
 	        <div class="alert alert-danger password-wrong" role="alert" style="display: none;">用户名或者密码错误！</div>
+	        <input style="display: none;" id="position-x" name="x" value="">
+	        <input style="display: none;" id="position-y" name="y" value="">
 	        <button class="btn btn-lg btn-primary btn-block login-button" id="login-button" type="button">登录</button>
 	      </form>
     	</div>

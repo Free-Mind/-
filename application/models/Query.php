@@ -33,6 +33,7 @@
 			if(isset($configs['sequence'])){
 				$sql .=" order by ".$configs['sequence'];
 			}
+
 			$query = $this->db->query($sql);
 			//返回结果数组
 			return $query->result_array();
@@ -76,9 +77,27 @@
 			return $order_detail_data;
 		}
 		public function get_user_like_hotel($u_id){
-			$sql = "select h_id from `h_evaluation` where u_id = '$u_id' and eval_cat >=3";
+			$sql = "select h_id,eval_cat from `h_evaluation` where u_id = '$u_id' and eval_cat >=3";
 			$hotels = $this->db->query($sql);
 			return $hotels->result_array();
+		}
+		//根据好评率由高到低排序
+		public function select_hotel_order_goodeval(){
+			$sql = "select *,(`h_good_eval_num`/`h_eval_num`) as `result` FROM `h_info` order by `result` desc";
+			$hotels = $this->db->query($sql)->result_array();
+			return $hotels;
+		}
+		//根据销售量来由高到低排序
+		public function select_hotel_order_salenum(){
+			$sql = "select * from `h_info` order by `h_sale_num` desc";
+			$hotels = $this->db->query($sql)->result_array();
+			return $hotels;
+		}
+		//根据距离远近进行排序
+		public function select_hotel_order_distance($x,$y){
+			$sql = "select * from `h_info` where x>$x-1 and x<$x+1 and y<$y+1 and y>$y-1 order by abs(x-$x)+abs(y-$y)";
+			$hotels = $this->db->query($sql)->result_array();
+			return $hotels;
 		}
 	}
 ?>

@@ -100,8 +100,41 @@ img{
 	display: none;
 	width: 100%;
 }
-
-
+.recommend-wrap{
+	padding-top: 10px;
+}
+.recommend-title{
+	color: #ff4683;
+	font-size: 16px;	
+	font-weight: bold;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #DDD8CE;
+}
+.conditions{
+	overflow: hidden;
+	position: relative;
+	padding-top: 10px;
+	border-bottom: 1px solid #DDD8CE;
+	width: 100%;
+}
+.eval_num_wrap{
+	float: left;
+	width: 33.3%;
+}
+.dropdown-toggle{
+	width: 100%;
+}
+.distance_wrap{
+	float: left;
+	width: 33.3%;
+}
+.sale_num_wrap{
+	float: left;
+	width: 33.3%;
+}
+.btn{
+	border-radius:0px;
+}
 /*.container .content-class .info-wrapper .title-line{
 	overflow: hidden;
 }
