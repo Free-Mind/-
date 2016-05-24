@@ -9,10 +9,17 @@ $(function(){
 	function showPosition(position)
 	{
 		//利用HTML5的localStorage来储存地理位置；
-		localStorage.y = position.coords.latitude;
-		localStorage.x = position.coords.longitude;
-		$("#position-x").val(position.coords.latitude);
-		$("#position-y").val(position.coords.longitude);
+		localStorage.x = position.coords.latitude;
+		localStorage.y = position.coords.longitude;
+		//向后台提交用户位置信息
+		$.ajax({
+			type:"POST",
+			url: "handle_position",
+			data:{x:position.coords.latitude,y:position.coords.longitude},
+			success:function(msg){
+				console.log(msg);
+			}
+		});
 	}
 });
 

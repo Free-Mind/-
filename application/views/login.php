@@ -26,5 +26,5 @@
 	</body>
 <script src=<?php echo $path['js'].'/jquery-2.2.1.min.js'?>></script>
 <script src=<?php echo $path['js'].'/bootstrap.min.js'?>></script>
-<script src=<?php echo $path['js'].'/login.js'?>></script>>
+<script src=<?php echo $path['js'].'/login.js'?>></script>
 </html>

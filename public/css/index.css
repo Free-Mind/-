@@ -135,6 +135,17 @@ img{
 .btn{
 	border-radius:0px;
 }
+.desc-wrap{
+	overflow: hidden;
+}
+.desc{
+	float: left;
+}
+.sale-eval{
+	float: right;
+	font-size: 10px;
+	color: #aaaaaa;
+}
 /*.container .content-class .info-wrapper .title-line{
 	overflow: hidden;
 }

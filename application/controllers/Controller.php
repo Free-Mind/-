@@ -51,17 +51,17 @@ class Controller extends CI_Controller {
 		global $data;
 		//载入首页需要准备的数据
 		$hotel_data = $this->prepare_index_data($sort_cat);
-		if(isset($_SESSION['x']) && isset($_SESSION['y'])){
-			$i = 0;
-			foreach($hotel_data as $hotel_item){
-				$x = $hotel_item['x'];
-				$y = $hotel_item['y'];
-				$distance = sqrt(pow($x-$_SESSION['x'],2)+pow($y-$_SESSION['y'],2));
-				$hotel_item['distance'] = $distance * 111;
-				$hotel_data[$i] = $hotel_item;
-				$i++;
-			}
-		}
+		// if(isset($_SESSION['x']) && isset($_SESSION['y'])){
+		// 	$i = 0;
+		// 	foreach($hotel_data as $hotel_item){
+		// 		$x = $hotel_item['x'];
+		// 		$y = $hotel_item['y'];
+		// 		$distance = sqrt(pow($x-$_SESSION['x'],2)+pow($y-$_SESSION['y'],2));
+		// 		$hotel_item['distance'] = $distance * 111;
+		// 		$hotel_data[$i] = $hotel_item;
+		// 		$i++;
+		// 	}
+		// }
 		$data['hotel_data'] = $hotel_data;
 		if(isset($_SESSION['id'])){
 			$recommend_hotel = $this->recommend($_SESSION['id']);
@@ -98,6 +98,15 @@ class Controller extends CI_Controller {
 		$this->load->view('login',$data);
 	}
 	
+	public function handle_position(){
+		if(isset($_POST['x']) && isset($_POST['y'])){
+			$_SESSION['x'] = $_POST['x'];
+			$_SESSION['y'] = $_POST['y'];
+			echo "success";
+		}else{
+			echo "false";
+		}
+	}
 	public function handle_login(){
 		$conditions['telphone'] = htmlspecialchars($_POST['telphone']);
 		$conditions['password'] = htmlspecialchars($_POST['password']);
@@ -212,9 +221,14 @@ class Controller extends CI_Controller {
 	public function account(){
 		global $data;
 		//为载入个人中心页面准备数据
-		$order_data = $this->get_order_data();
-		$data['order_data'] = $order_data;
-		$this->load->view("account",$data);
+		if(isset($_SESSION['id'])){
+			$order_data = $this->get_order_data();
+			$data['order_data'] = $order_data;
+			$this->load->view("account",$data);
+		}else{
+			redirect("./controller/login");
+		}
+		
 	}
 
 	//载入订单详情页面
@@ -239,13 +253,13 @@ class Controller extends CI_Controller {
 		$hotel_data = array();
 		switch($sort_cat){
 			case 1:
-				$hotel_data = $this->query->select_hotel_order_goodeval();
+				$hotel_data = $this->query->select_hotel_order_goodeval($_SESSION['x'],$_SESSION['y']);
 				break;
 			case 2:
 				$hotel_data = $this->query->select_hotel_order_distance($_SESSION['x'],$_SESSION['y']);
 				break;
 			case 3:
-				$hotel_data = $this->query->select_hotel_order_salenum();
+				$hotel_data = $this->query->select_hotel_order_salenum($_SESSION['x'],$_SESSION['y']);
 				break;
 		}
 		return $hotel_data;
@@ -338,12 +352,9 @@ class Controller extends CI_Controller {
 					}
 			}
 		}
-//		var_dump($hotel_recommend_list);
 		//通过排序，只取前K个酒店推荐
 		arsort($hotel_recommend_list);
-//		var_dump($hotel_recommend_list);
 	    $hotels_id = array_slice($hotel_recommend_list, 0, K,true);
-//	    var_dump($hotels_id);
 	    $top_K_recommend = array();
 	    $j = 0;
 	    foreach($hotels_id as $key=>$value){

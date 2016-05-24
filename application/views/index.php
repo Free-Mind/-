@@ -115,7 +115,10 @@
 								<p class="item-name"><?php echo $item['h_name']?></p>
 							</div>
 						</div>
-						<p class="desc"><?php echo $item['h_desc']?></p>
+						<div class="desc-wrap">
+							<p class="desc"><?php echo $item['h_desc']?></p>
+							<p class="sale-eval"><?php echo $item['h_sale_num']."份订单  ".$item['h_eval_num']."份评价"?></p>
+						</div>
 						<div class="address-line">
 							<p class="address"><?php echo $item['h_address']?></p>
 <?php

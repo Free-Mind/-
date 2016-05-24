@@ -82,20 +82,30 @@
 			return $hotels->result_array();
 		}
 		//根据好评率由高到低排序
-		public function select_hotel_order_goodeval(){
-			$sql = "select *,(`h_good_eval_num`/`h_eval_num`) as `result` FROM `h_info` order by `result` desc";
+		public function select_hotel_order_goodeval($x,$y){
+			$sql = "select *,(`h_good_eval_num`/`h_eval_num`) as `result` ,
+			3956 * 2 * ASIN(SQRT(POWER(SIN((x - $x) * pi()/180 / 2), 2) +  
+			COS(x * pi()/180) *  COS($x * pi()/180) *  POWER(SIN((y -$y) * pi()/180 / 2), 2)  )) as distance
+			FROM `h_info` order by `result` desc";
 			$hotels = $this->db->query($sql)->result_array();
 			return $hotels;
 		}
 		//根据销售量来由高到低排序
-		public function select_hotel_order_salenum(){
-			$sql = "select * from `h_info` order by `h_sale_num` desc";
+		public function select_hotel_order_salenum($x,$y){
+			$sql = "select *,
+			3956 * 2 * ASIN(SQRT(POWER(SIN((x - $x) * pi()/180 / 2), 2) +  
+			COS(x * pi()/180) *  COS($x * pi()/180) *  POWER(SIN((y -$y) * pi()/180 / 2), 2)  )) as distance
+			 from `h_info` order by `h_sale_num` desc";
 			$hotels = $this->db->query($sql)->result_array();
 			return $hotels;
 		}
 		//根据距离远近进行排序
 		public function select_hotel_order_distance($x,$y){
-			$sql = "select * from `h_info` where x>$x-1 and x<$x+1 and y<$y+1 and y>$y-1 order by abs(x-$x)+abs(y-$y)";
+			$sql  = "select *,  
+			3956 * 2 * ASIN(SQRT(POWER(SIN((x - $x) * pi()/180 / 2), 2) +  
+			COS(x * pi()/180) *  COS($x * pi()/180) *  POWER(SIN((y -$y) * pi()/180 / 2), 2)  )) as distance from `h_info` 
+			where x>$x-1 and x<$x+1 and y<$y+1 and y>$y-1 
+			order by distance";
 			$hotels = $this->db->query($sql)->result_array();
 			return $hotels;
 		}
